@@ -9,75 +9,66 @@
 
 <body>
 
+<!-- EKRAN LOGOWANIA -->
 <div id="loginScreen">
-
-<h1>Crypto Casino</h1>
-
-<input id="username" placeholder="Nazwa użytkownika">
-<input id="password" type="password" placeholder="Hasło">
-
-<button onclick="login()">Login</button>
-<button onclick="register()">Register</button>
-
+  <div class="loginBox">
+    <h1>Crypto Casino</h1>
+    <input id="username" placeholder="Nazwa użytkownika">
+    <input id="password" type="password" placeholder="Hasło">
+    <button onclick="login()">Login</button>
+    <button onclick="register()">Register</button>
+    <p id="loginMessage"></p>
+  </div>
 </div>
 
-
+<!-- PANEL KASYNO -->
 <div id="casino" style="display:none">
 
 <header>
-
-<div class="logo">CRYPTO CASINO</div>
-
-<div class="wallet">
-Saldo: <span id="balance">0</span> BTC
-</div>
-
+  <div class="logo">CRYPTO CASINO</div>
+  <div class="wallet">
+    <span id="avatar">👤</span>
+    <span id="playerName"></span> | Saldo: <span id="balance">0.00000</span> BTC
+  </div>
 </header>
 
 <nav>
-
-<button onclick="showPage('dashboard')">Dashboard</button>
-<button onclick="showPage('games')">Gry</button>
-<button onclick="showPage('chat')">Chat</button>
-
+  <button onclick="show('dashboard')">Dashboard</button>
+  <button onclick="show('games')">Gry</button>
+  <button onclick="show('leaderboard')">Leaderboard</button>
+  <button onclick="logout()">Wyloguj</button>
 </nav>
 
+<main>
 
+<!-- DASHBOARD -->
 <section id="dashboard">
-
-<h2>Panel gracza</h2>
-
-<button onclick="addDemoBalance()">Dodaj demo BTC</button>
-
+  <h2>Panel gracza</h2>
+  <div id="stats">
+    <p>Wygrane: <span id="wins">0</span></p>
+    <p>Przegrane: <span id="losses">0</span></p>
+  </div>
+  <button onclick="addDemoBalance()">Dodaj demo BTC</button>
 </section>
 
-
+<!-- GAMES -->
 <section id="games">
-
-<h2>Crash</h2>
-
-<div id="crashMultiplier">1.00x</div>
-
-<button onclick="startCrash()">Start</button>
-<button onclick="cashout()">Cashout</button>
-
+  <h2>Crash</h2>
+  <div id="multiplier">1.00x</div>
+  <button onclick="startCrash()">Start</button>
+  <button onclick="cashout()">Cashout</button>
 </section>
 
-
-<section id="chat">
-
-<h2>Chat kasyna</h2>
-
-<div id="chatBox"></div>
-
-<input id="chatInput">
-<button onclick="sendMessage()">Wyślij</button>
-
+<!-- LEADERBOARD -->
+<section id="leaderboard">
+  <h2>Top gracze</h2>
+  <ul id="leaderboardList"></ul>
 </section>
+
+</main>
 
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
