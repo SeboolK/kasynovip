@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Casino</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="loginScreen">
+
+<h1>Crypto Casino</h1>
+
+<input id="username" placeholder="Nazwa użytkownika">
+<input id="password" type="password" placeholder="Hasło">
+
+<button onclick="login()">Login</button>
+<button onclick="register()">Register</button>
+
+</div>
+
+
+<div id="casino" style="display:none">
+
+<header>
+
+<div class="logo">CRYPTO CASINO</div>
+
+<div class="wallet">
+Saldo: <span id="balance">0</span> BTC
+</div>
+
+</header>
+
+<nav>
+
+<button onclick="showPage('dashboard')">Dashboard</button>
+<button onclick="showPage('games')">Gry</button>
+<button onclick="showPage('chat')">Chat</button>
+
+</nav>
+
+
+<section id="dashboard">
+
+<h2>Panel gracza</h2>
+
+<button onclick="addDemoBalance()">Dodaj demo BTC</button>
+
+</section>
+
+
+<section id="games">
+
+<h2>Crash</h2>
+
+<div id="crashMultiplier">1.00x</div>
+
+<button onclick="startCrash()">Start</button>
+<button onclick="cashout()">Cashout</button>
+
+</section>
+
+
+<section id="chat">
+
+<h2>Chat kasyna</h2>
+
+<div id="chatBox"></div>
+
+<input id="chatInput">
+<button onclick="sendMessage()">Wyślij</button>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
