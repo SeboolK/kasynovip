@@ -130,3 +130,80 @@ function cashout(){
   updateBalance()
   updateStats()
 }
+
+// ====== DICE ======
+function rollDice(){
+  let result = Math.floor(Math.random()*100)
+  document.getElementById("diceResult").innerText = result
+  if(result > 50){
+    balance += 0.0002
+    wins++
+  } else {
+    balance -= 0.0001
+    losses++
+  }
+  updateBalance()
+  updateStats()
+}
+
+// ====== MINES ======
+let mines=[]
+function createMines(){
+  let grid = document.getElementById("mineGrid")
+  grid.innerHTML=""
+  mines=[]
+  for(let i=0;i<25;i++){
+    let bomb = Math.random()<0.2
+    mines.push(bomb)
+    let div = document.createElement("div")
+    div.className="mine"
+    div.onclick=()=>{
+      if(div.innerText!==""){return} // kliknięcie raz
+      if(bomb){
+        div.innerText="💣"
+        balance -= 0.0002
+        losses++
+      } else {
+        div.innerText="💎"
+        balance += 0.0001
+        wins++
+      }
+      updateBalance()
+      updateStats()
+    }
+    grid.appendChild(div)
+  }
+}
+
+// ====== COINFLIP ======
+function flipCoin(){
+  let result = Math.random()<0.5?"Orzeł":"Reszka"
+  document.getElementById("coinResult").innerText=result
+  if(result==="Orzeł"){
+    balance += 0.0002
+    wins++
+  } else {
+    balance -= 0.0001
+    losses++
+  }
+  updateBalance()
+  updateStats()
+}
+
+// ====== ROULETTE ======
+function spinRoulette(){
+  let wheel = document.getElementById("rouletteWheel")
+  let deg = Math.random()*3600
+  wheel.style.transform="rotate("+deg+"deg)"
+  let number = Math.floor(Math.random()*37)
+  document.getElementById("rouletteResult").innerText="Wynik: "+number
+  if(number===7){ // trafienie przykładowe
+    balance += 0.005
+    wins++
+  } else {
+    balance -= 0.0001
+    losses++
+  }
+  updateBalance()
+  updateStats()
+}
