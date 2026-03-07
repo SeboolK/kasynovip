@@ -1,55 +1,112 @@
+/* OGÓLNE */
 body{
-background:#0b0f1a;
-color:white;
-font-family:Arial;
-margin:0;
+  margin:0;
+  font-family:Arial;
+  background:#05060a;
+  color:white;
 }
 
+/* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-padding:20px;
-background:#05070d;
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
+  background:#0b0f1a;
+  border-bottom:1px solid #00ffcc;
 }
 
 .logo{
-color:#00ff9c;
-font-size:22px;
+  color:#00ffcc;
+  font-weight:bold;
+  font-size:22px;
 }
 
+.wallet{
+  color:#00ffcc;
+}
+
+/* NAV */
 nav{
-background:#0d1322;
-padding:10px;
+  padding:10px;
+  background:#080b13;
 }
 
 nav button{
-background:#111a2e;
-border:none;
-color:white;
-padding:10px;
-margin-right:10px;
-cursor:pointer;
+  background:#0f1626;
+  border:1px solid #00ffcc;
+  color:#00ffcc;
+  padding:10px;
+  margin-right:5px;
+  cursor:pointer;
 }
 
+/* SEKCJE */
 section{
-display:none;
-padding:40px;
+  display:none;
+  padding:40px;
 }
 
 #dashboard{
-display:block;
+  display:block;
 }
 
-#crashMultiplier{
-font-size:60px;
-color:#ffd500;
-margin:30px;
+button{
+  background:#00ffcc;
+  border:none;
+  padding:10px 20px;
+  cursor:pointer;
+  margin-top:10px;
 }
 
-#chatBox{
-height:200px;
-overflow:auto;
-background:#111a2e;
-padding:10px;
-margin-bottom:10px;
+/* LOGIN SCREEN */
+#loginScreen{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#020617,#0f172a);
+}
+
+.loginBox{
+  background:#020617;
+  padding:40px;
+  border-radius:10px;
+  box-shadow:0 0 20px #00ffcc;
+  display:flex;
+  flex-direction:column;
+  width:300px;
+}
+
+.loginBox h1{
+  text-align:center;
+  color:#00ffcc;
+  margin-bottom:20px;
+}
+
+.loginBox input{
+  padding:10px;
+  margin-bottom:10px;
+  border:none;
+  background:#0f172a;
+  color:white;
+}
+
+.loginBox button{
+  padding:10px;
+  margin-top:5px;
+  border:none;
+  background:#00ffcc;
+  cursor:pointer;
+}
+
+#loginMessage{
+  text-align:center;
+  margin-top:10px;
+}
+
+/* CRASH */
+#multiplier{
+  font-size:60px;
+  color:#ffd500;
+  margin:20px;
 }
