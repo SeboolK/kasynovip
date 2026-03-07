@@ -110,3 +110,46 @@ button{
   color:#ffd500;
   margin:20px;
 }
+
+#games h2{
+  margin-top:30px;
+  color:#00ffcc;
+}
+
+#diceResult, #coinResult, #rouletteResult{
+  font-size:40px;
+  margin:10px 0;
+}
+
+#multiplier{
+  font-size:60px;
+  color:#ffd500;
+  margin:20px 0;
+}
+
+#mineGrid{
+  display:grid;
+  grid-template-columns:repeat(5,60px);
+  gap:10px;
+  margin-top:10px;
+}
+
+.mine{
+  width:60px;
+  height:60px;
+  background:#0f1626;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:24px;
+}
+#rouletteWheel{
+  font-size:80px;
+  margin:20px 0;
+  transition: transform 2s;
+}
+#coin{
+  font-size:80px;
+  margin:20px 0;
+}
